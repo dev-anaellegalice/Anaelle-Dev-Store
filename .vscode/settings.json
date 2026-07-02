@@ -1,0 +1,20 @@
+{
+  "css.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "files.associations": {
+    "*.liquid": "liquid"
+  },
+
+  "[liquid]": {
+    "editor.defaultFormatter": "Shopify.theme-check-vscode"
+  },
+
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+
+  "emmet.includeLanguages": {
+    "liquid": "html"
+  }
+}
