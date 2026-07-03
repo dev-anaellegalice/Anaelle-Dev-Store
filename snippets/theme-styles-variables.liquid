@@ -154,20 +154,40 @@
     /* Letter spacing */
     --letter-spacing-sm: 0.06em;
     --letter-spacing-md: 0.13em;
+   
+    /* Anaelle Dev Lab design tokens */
+    --adl-font-body: "Inter", sans-serif;
+    --adl-font-body-style: normal;
+    --adl-font-body-weight: 400;
 
-    /* Font families */
-    --font-body--family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
-    --font-body--style: {{ settings.type_body_font.style }};
-    --font-body--weight: {{ settings.type_body_font.weight }};
-    --font-subheading--family: {{ settings.type_subheading_font.family }}, {{ settings.type_subheading_font.fallback_families }};
-    --font-subheading--style: {{ settings.type_subheading_font.style }};
-    --font-subheading--weight: {{ settings.type_subheading_font.weight }};
-    --font-heading--family: {{ settings.type_heading_font.family }}, {{ settings.type_heading_font.fallback_families }};
-    --font-heading--style: {{ settings.type_heading_font.style }};
-    --font-heading--weight: {{ settings.type_heading_font.weight }};
-    --font-accent--family: {{ settings.type_accent_font.family }}, {{ settings.type_accent_font.fallback_families }};
-    --font-accent--style: {{ settings.type_accent_font.style }};
-    --font-accent--weight: {{ settings.type_accent_font.weight }};
+    --adl-font-subheading: "Inter", sans-serif;
+    --adl-font-subheading-style: normal;
+    --adl-font-subheading-weight: 500;
+
+    --adl-font-heading: "Outfit", sans-serif;
+    --adl-font-heading-style: normal;
+    --adl-font-heading-weight: 500;
+
+    --adl-font-accent: "Outfit", sans-serif;
+    --adl-font-accent-style: normal;
+    --adl-font-accent-weight: 600;
+
+   /* Font families */
+    --font-body--family: var(--adl-font-body);
+    --font-body--style: var(--adl-font-body-style);
+    --font-body--weight: var(--adl-font-body-weight);
+
+    --font-subheading--family: var(--adl-font-subheading);
+    --font-subheading--style: var(--adl-font-subheading-style);
+    --font-subheading--weight: var(--adl-font-subheading-weight);
+
+    --font-heading--family: var(--adl-font-heading);
+    --font-heading--style: var(--adl-font-heading-style);
+    --font-heading--weight: var(--adl-font-heading-weight);
+
+    --font-accent--family: var(--adl-font-accent);
+    --font-accent--style: var(--adl-font-accent-style);
+    --font-accent--weight: var(--adl-font-accent-weight);
 
     /* Margin sizes */
     --font-heading--spacing: 0.25em;
@@ -380,6 +400,23 @@
     --color-instock: #3ED660;
     --color-lowstock: #EE9441;
     --color-outofstock: #C8C8C8;
+    --adl-color-background: #F8F8F6;
+    --adl-color-surface: #FFFFFF;
+
+    --adl-color-text: #111111;
+    --adl-color-text-muted: #6B7280;
+
+    --adl-color-primary: #8CC7B8;
+    --adl-color-primary-light: #D8F0E8;
+
+    --adl-color-secondary: #DCD4FF;
+    --adl-color-secondary-light: #F2EFFF;
+
+    --adl-color-border: #ECECEC;
+
+    --adl-color-success: #3ED660;
+    --adl-color-warning: #EE9441;
+    --adl-color-error: #8B0000;
 
     /* Opacity */
     --opacity-5: 0.05;
@@ -444,6 +481,12 @@
     --spacing-scale-sm: 0.6;
     --spacing-scale-md: 0.7;
     --spacing-scale-default: 1.0;
+    --adl-page-width: 1400px;
+
+    --adl-section-spacing-xs: 40px;
+    --adl-section-spacing-sm: 80px;
+    --adl-section-spacing-md: 120px;
+    --adl-section-spacing-lg: 160px;
 
     /* Checkout buttons gap */
     --checkout-button-gap: 10px;

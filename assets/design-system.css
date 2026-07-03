@@ -1,0 +1,78 @@
+/* ==========================================
+   Anaelle Dev Lab - Backgrounds
+========================================== */
+
+.adl-bg {
+  background-color: var(--adl-color-background);
+}
+
+.adl-surface {
+  background-color: var(--adl-color-surface);
+}
+
+.adl-bg-primary {
+  background-color: var(--adl-color-primary);
+}
+
+.adl-bg-primary-light {
+  background-color: var(--adl-color-primary-light);
+}
+
+.adl-bg-secondary {
+  background-color: var(--adl-color-secondary);
+}
+
+.adl-bg-secondary-light {
+  background-color: var(--adl-color-secondary-light);
+}
+
+
+/* ==========================================
+   Anaelle Dev Lab - Text Colors
+========================================== */
+
+.adl-text {
+  color: var(--adl-color-text);
+}
+
+.adl-text-muted {
+  color: var(--adl-color-text-muted);
+}
+
+.adl-text-primary {
+  color: var(--adl-color-primary);
+}
+
+.adl-text-secondary {
+  color: var(--adl-color-secondary);
+}
+
+.adl-text-success {
+  color: var(--adl-color-success);
+}
+
+.adl-text-warning {
+  color: var(--adl-color-warning);
+}
+
+.adl-text-error {
+  color: var(--adl-color-error);
+}
+
+
+/* ==========================================
+   Anaelle Dev Lab - Borders
+========================================== */
+
+.adl-border {
+  border: 1px solid var(--adl-color-border);
+}
+
+.adl-border-primary {
+  border: 1px solid var(--adl-color-primary);
+}
+
+.adl-border-secondary {
+  border: 1px solid var(--adl-color-secondary);
+}
+
