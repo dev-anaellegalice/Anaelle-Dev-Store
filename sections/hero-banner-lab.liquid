@@ -1,0 +1,112 @@
+{{ 'hero-banner-adl.css' | asset_url | stylesheet_tag }}
+<section class="adl-hero section">
+  <div class="adl-hero__background">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image
+        | image_url: width: 1600
+        | image_tag:
+          class: 'adl-hero__image',
+          loading: 'eager',
+          fetchpriority: 'high',
+          alt: section.settings.image.alt
+      }}
+    {% endif %}
+  </div>
+  <div class="adl-hero__content">
+    {%  if section.settings.eyebrow != blank %}
+      <p class="adl-eyebrow">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+    {%  if section.settings.title != blank %}
+      <h1 class="adl-hero__title">
+        {{ section.settings.title }}
+      </h1>
+    {% endif %}
+    {%  if section.settings.text != blank %}
+      <p class="adl-hero__text">
+        {{ section.settings.text }}
+      </p>
+    {% endif %}
+
+    <div class="adl-hero__buttons">
+      {%  if section.settings.primary_link != blank %}
+      <a href="{{ section.settings.primary_link }}" class="adl-button adl-button--primary">
+        {{ section.settings.primary_label }}
+        <span>→</span>
+      </a>
+      {% endif %}
+      {%  if section.settings.secondary_link != blank %}          
+      <a href="{{ section.settings.secondary_link }}" class="adl-button adl-button--secondary">
+        {{ section.settings.secondary_label }}
+      </a>
+      {% endif %}
+    </div>
+
+    <div class="adl-hero__caption">
+      {{ section.settings.caption }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ADL Hero banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Welcome to the lab"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Anaëlle Dev Lab"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Building high-performing Shopify experiences. One feature at a time."
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary button label",
+      "default": "Explore the lab"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary button label",
+      "default": "View projects"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary button link"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption",
+      "default": "Shopify development portfolio"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "ADL Hero banner"
+    }
+  ]
+}
+{% endschema %}
