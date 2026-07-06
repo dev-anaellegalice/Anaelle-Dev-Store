@@ -1,0 +1,44 @@
+{% liquid
+  assign product_title = product.title
+  assign product_url = product.url
+  assign product_image = product.featured_image
+  assign product_description = product.description | strip_html | truncate: 90
+%}
+
+<section class="lab-product-card">
+  <a href="{{ product_url }}" class="lab-product-card__media">
+    <span class="lab-product-card__index">
+      {{ index | prepend: '00' | slice: -3, 3 }}
+    </span>
+
+    {% if product_image != blank %}
+      {{
+        product_image
+        | image_url: width: 600
+        | image_tag:
+          loading: 'lazy',
+          class: 'lab-product-card__image',
+          alt: product_image.alt | default: product_title
+      }}
+    {% endif %}
+  </a>
+
+  <div class="lab-product-card__content">
+    <h3 class="lab-product-card__title">
+      <a href="{{ product_url }}">
+        {{ product_title }}
+      </a>
+    </h3>
+
+    {% if show_description and product_description != blank %}
+      <p class="lab-product-card__description">
+        {{ product_description }}
+      </p>
+    {% endif %}
+
+    <a href="{{ product_url }}" class="lab-product-card__link">
+      {{ link_label }}
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>

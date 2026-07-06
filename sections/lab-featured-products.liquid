@@ -1,0 +1,144 @@
+{{ 'lab-featured-products.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'lab-featured-products.js' | asset_url }}" defer></script>
+
+<style>
+  .section-{{ section.id }} {
+    --background-color: {{ section.settings.background_color }};
+    --card-background-color: {{ section.settings.card_background_color }};
+    --card-border-color: {{ section.settings.card_border_color }};
+    --text-color: {{ section.settings.text_color }};
+    --muted-text-color: {{ section.settings.muted_text_color }};
+    --link-color: {{ section.settings.link_color }};
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+</style>
+
+<section class="lab-featured-products section-{{ section.id }}">
+  <div class="page-width">
+    <div class="lab-featured-products__swiper swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% assign product = block.settings.product %}
+
+          {% if product != blank %}
+            <div class="swiper-slide" {{ block.shopify_attributes }}>
+              {% render 'lab-product-card',
+                product: product,
+                index: forloop.index,
+                show_description: section.settings.show_description,
+                link_label: section.settings.link_label
+              %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lab featured products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Card link label",
+      "default": "View product"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show product description",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border color",
+      "default": "#e6e6e6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "muted_text_color",
+      "label": "Muted text color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lab featured products",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
