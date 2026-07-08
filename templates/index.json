@@ -24,208 +24,171 @@
         "image": "shopify://shop_images/image_banner_dev_anaelle.png"
       }
     },
-    "product_list_fa6P9H": {
-      "type": "product-list",
+    "lab_collection_header_Hw7VHp": {
+      "type": "lab-collection-header",
+      "name": "Lab collection header",
+      "settings": {
+        "eyebrow": "The collection",
+        "heading": "Explore the lab",
+        "link_label": "View all products",
+        "link_url": "shopify://collections/all",
+        "bg_color": "#ffffff",
+        "eyebrow_color": "#5fa58f",
+        "heading_color": "#111111",
+        "link_color": "#111111",
+        "padding_top": 72,
+        "padding_bottom": 32
+      }
+    },
+    "lab_featured_products_wpTGLt": {
+      "type": "lab-featured-products",
       "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
+        "product_RpzLp8": {
+          "type": "product",
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "background_color": "",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "custom_button_background": "{{ settings.color_palette.foreground }}",
-                "custom_button_text": "{{ settings.color_palette.background }}",
-                "custom_button_border": "{{ settings.color_palette.background }}",
-                "link_text_color": "",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
+            "product": "liquid-essentials™"
+          }
         },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
+        "product_kdiabc": {
+          "type": "product",
           "settings": {
-            "product_card_gap": 4,
-            "background_color": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_color": "",
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "text_color": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
-          ]
+            "product": "variant-engine™"
+          }
+        },
+        "product_GY6BVt": {
+          "type": "product",
+          "settings": {
+            "product": "conversion-lab™"
+          }
         }
       },
-      "name": "Featured collection",
+      "block_order": [
+        "product_RpzLp8",
+        "product_kdiabc",
+        "product_GY6BVt"
+      ],
+      "name": "Lab featured products",
       "settings": {
-        "collection": "all",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "link_label": "View product",
+        "show_description": true,
+        "background_color": "#ffffff",
+        "card_background_color": "#ffffff",
+        "card_border_color": "#e6e6e6",
+        "text_color": "#111111",
+        "muted_text_color": "#666666",
+        "link_color": "#111111",
+        "padding_top": 24,
+        "padding_bottom": 72
+      }
+    },
+    "section_lab_skill_showcase_EaKWzw": {
+      "type": "section-lab-skill-showcase",
+      "blocks": {
+        "skill_hQdDNe": {
+          "type": "skill",
+          "settings": {
+            "icon": "shopify://shop_images/Single-Man-Actions-Setting--Streamline-Ultimate.png",
+            "title": "CLEAN CODE",
+            "text": "Maintainable & scalable Liquid architecture."
+          }
+        },
+        "skill_KYKjty": {
+          "type": "skill",
+          "settings": {
+            "icon": "shopify://shop_images/Graph-Stats-Ascend--Streamline-Ultimate.png",
+            "title": "PERFORMANCE",
+            "text": "Fast, optimized & performance-focused."
+          }
+        },
+        "skill_RXnRdz": {
+          "type": "skill",
+          "settings": {
+            "icon": "shopify://shop_images/Folder-Code--Streamline-Ultimate.png",
+            "title": "USER EXPERIENCE",
+            "text": "Smooth interactions that converts."
+          }
+        },
+        "skill_4dVgkV": {
+          "type": "skill",
+          "settings": {
+            "icon": "shopify://shop_images/Lab-Flask-Experiment--Streamline-Ultimate.png",
+            "title": "SHOPIFY EXPERTISE",
+            "text": "Built with Shopify best practices."
+          }
+        }
+      },
+      "block_order": [
+        "skill_hQdDNe",
+        "skill_KYKjty",
+        "skill_RXnRdz",
+        "skill_4dVgkV"
+      ],
+      "name": "Lab skill showcase",
+      "settings": {
+        "eyebrow": "WHAT'S INSIDE",
+        "heading": "EVERY PRODUCT\nSHOWCASES A CORE\nSHOPIFY SKILL",
+        "background_color": "linear-gradient(90deg, rgba(243, 250, 246, 1), rgba(238, 248, 251, 1) 45%, rgba(255, 255, 255, 1) 100%)",
+        "text_color": "#111111",
+        "accent_color": "#6aa88f"
+      }
+    },
+    "section_lab_skill_showcase_dxVQj4": {
+      "type": "section-lab-skill-showcase",
+      "blocks": {
+        "skill_gQPDjn": {
+          "type": "skill",
+          "settings": {
+            "icon": "shopify://shop_images/github-142-svgrepo-com.svg",
+            "title": "",
+            "text": "Github"
+          }
+        },
+        "skill_Hz3KCQ": {
+          "type": "skill",
+          "settings": {
+            "icon": "shopify://shop_images/liquid-drop-svgrepo-com.svg",
+            "title": "Liquid",
+            "text": ""
+          }
+        },
+        "skill_43p3Hm": {
+          "type": "skill",
+          "settings": {
+            "icon": "shopify://shop_images/javascript-155-svgrepo-com.svg",
+            "title": "Javascript",
+            "text": ""
+          }
+        },
+        "skill_htDBQB": {
+          "type": "skill",
+          "settings": {
+            "icon": "shopify://shop_images/css3-01-svgrepo-com.svg",
+            "title": "CSS",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "skill_gQPDjn",
+        "skill_Hz3KCQ",
+        "skill_43p3Hm",
+        "skill_htDBQB"
+      ],
+      "name": "Lab skill showcase",
+      "settings": {
+        "eyebrow": "THE PROCESS",
+        "heading": "IDEA. CODE.\nOPTIMIZE. REPEAT.",
+        "background_color": "linear-gradient(90deg, rgba(NaN, NaN, NaN, 0), rgba(238, 248, 251, 1) 100%, rgba(255, 255, 255, 1) 100%)",
+        "text_color": "#111111",
+        "accent_color": "#6aa88f"
       }
     }
   },
   "order": [
     "hero_banner_lab_P7xp97",
-    "product_list_fa6P9H"
+    "lab_collection_header_Hw7VHp",
+    "lab_featured_products_wpTGLt",
+    "section_lab_skill_showcase_EaKWzw",
+    "section_lab_skill_showcase_dxVQj4"
   ]
 }

@@ -1,0 +1,24 @@
+<div class="lab-main-product__content">
+  {% if product.title != blank %}
+    <h1 class="lab-main-product__title">
+      {{ product.title }}
+    </h1>
+  {% endif %}
+
+  {% if product.selected_or_first_available_variant.price != blank %}
+    <div class="lab-main-product__price" data-product-price>
+      {{ product.selected_or_first_available_variant.price | money }}
+    </div>
+  {% endif %}
+
+  {% if product.description != blank %}
+    <div class="lab-main-product__description rte">
+      {{ product.description }}
+    </div>
+  {% endif %}
+
+  {% render 'product-buy-button',
+    product: product,
+    section_id: section_id
+  %}
+</div>

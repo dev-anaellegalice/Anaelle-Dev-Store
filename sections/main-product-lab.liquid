@@ -1,0 +1,30 @@
+{{ 'section-main-product-lab.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'main-product-lab.js' | asset_url }}" defer="defer"></script>
+
+<section class="lab-main-product">
+  <div class="lab-main-product__container page-width">
+    <div class="lab-main-product__media">
+      {% render 'lab-product-media', product: product %}
+    </div>
+    <div class="lab-main-product__description">
+      {% render 'lab-product-description',
+        product: product,
+        section_id: section.id
+      %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main product lab",
+  "tag": "section",
+  "class": "section-main-product-lab",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Main product lab"
+    }
+  ]
+}
+{% endschema %}

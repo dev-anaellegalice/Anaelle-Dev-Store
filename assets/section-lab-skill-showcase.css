@@ -1,0 +1,125 @@
+.lab-skill-showcase {
+  background: var(--lab-skill-bg);
+  color: var(--lab-skill-text);
+}
+
+.lab-skill-showcase__intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lab-skill-showcase__container {
+  display: grid;
+  grid-template-columns: minmax(220px, 400px) 1fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+  padding-top: clamp(40px, 6vw, 72px);
+  padding-bottom: clamp(40px, 6vw, 72px);
+}
+
+.lab-skill-showcase__eyebrow {
+  margin: 0 0 14px;
+  color: var(--lab-skill-accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.lab-skill-showcase__heading {
+  margin: 0;
+  max-width: 320px;
+  font-size: clamp(26px, 2.6vw, 38px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.lab-skill-showcase__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.lab-skill-showcase__item {
+  position: relative;
+  padding: 8px clamp(20px, 2.8vw, 44px);
+}
+
+.lab-skill-showcase__item:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: currentColor;
+  opacity: 0.12;
+}
+
+.lab-skill-showcase__icon {
+  display: flex;
+  margin-bottom: 22px;
+}
+
+.lab-skill-showcase__icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.lab-skill-showcase__title {
+  margin: 0 0 12px;
+  color: var(--lab-skill-accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.lab-skill-showcase__text {
+  margin: 0;
+  max-width: 170px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+@media screen and (max-width: 989px) {
+  .lab-skill-showcase__container {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-skill-showcase__items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 0;
+  }
+
+  .lab-skill-showcase__item:nth-child(odd)::before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .lab-skill-showcase__intro {
+    text-align: center;
+  }
+  .lab-skill-showcase__items {
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+
+  .lab-skill-showcase__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 24px 0;
+    border-top: 1px solid rgb(0 0 0 / 12%);
+  }
+
+  .lab-skill-showcase__item::before {
+    display: none;
+  }
+}

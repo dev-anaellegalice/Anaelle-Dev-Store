@@ -1,0 +1,18 @@
+.lab-main-product__container {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: clamp(32px, 6vw, 80px);
+   align-items: start;
+   padding-top: clamp(40px, 6vw, 72px);
+}
+
+.lab-product-media {
+  overflow: hidden;
+}
+
+.lab-product-media__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

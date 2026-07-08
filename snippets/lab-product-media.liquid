@@ -1,0 +1,21 @@
+{% liquid
+  assign featured_media = product.selected_or_first_available_variant.featured_media
+  if featured_media == blank
+    assign featured_media = product.featured_media
+  endif
+%}
+
+{% if featured_media != blank %}
+  <div class="lab-product-media">
+    {{
+      featured_media
+      | image_url: width: 1400
+      | image_tag:
+        loading: 'eager',
+        widths: '400, 600, 800, 1000, 1200, 1400',
+        sizes: '(max-width: 749px) 100vw, 50vw',
+        class: 'lab-product-media__image',
+        alt: product.title
+    }}
+  </div>
+{% endif %}
