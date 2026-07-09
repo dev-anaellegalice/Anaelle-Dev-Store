@@ -1,15 +1,64 @@
-<div class="lab-main-product__content">
+{% liquid
+  assign current_variant = product.selected_or_first_available_variant
+%}
+
+<variant-selects-lab class="lab-main-product__content">
   {% if product.title != blank %}
     <h1 class="lab-main-product__title">
       {{ product.title }}
     </h1>
   {% endif %}
 
-  {% if product.selected_or_first_available_variant.price != blank %}
+  {% if current_variant.price != blank %}
     <div class="lab-main-product__price" data-product-price>
-      {{ product.selected_or_first_available_variant.price | money }}
+      {{ current_variant.price | money }}
     </div>
   {% endif %}
+
+    {% unless product.has_only_default_variant %}
+    <div class="lab-product-options">
+      <script type="application/json" data-product-json>
+        {{ product | json }}
+      </script>
+
+      {% for option in product.options_with_values %}
+        <fieldset class="lab-product-options__group">
+          <div class="lab-product-options__label">
+            {{ option.name }}
+          </div>
+
+          <div class="lab-product-options__values">
+            {% for value in option.values %}
+              {% assign input_id = section_id | append: '-' | append: option.position | append: '-' | append: forloop.index0 %}
+              {% assign value_available = false %}
+
+              {% for variant in product.variants %}
+                {% if variant.option1 == value and variant.available %}
+                  {% assign value_available = true %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+
+              <input
+                class="lab-product-options__input hidden"
+                type="radio"
+                id="{{ input_id }}"
+                name="options[{{ option.name | escape }}]"
+                value="{{ value | escape }}"
+                {% if option.selected_value == value %}
+                  checked
+                {% endif %}
+              >
+
+              <label class="lab-product-options__value {% unless value_available %}lab-product-options__value--disabled{% endunless %}" for="{{ input_id }}">
+                {{ value }}
+              </label>
+            {% endfor %}
+          </div>
+        </fieldset>
+      {% endfor %}
+    </div>
+  {% endunless %}
 
   {% if product.description != blank %}
     <div class="lab-main-product__description rte">
@@ -17,8 +66,8 @@
     </div>
   {% endif %}
 
-  {% render 'product-buy-button',
+  {% render 'lab-buy-button',
     product: product,
     section_id: section_id
   %}
-</div>
+</variant-selects-lab>

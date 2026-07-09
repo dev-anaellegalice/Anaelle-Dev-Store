@@ -1,0 +1,59 @@
+{% liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign can_add_to_cart = current_variant.available
+  assign product_variant_media = current_variant.featured_media.preview_image | image_url: width: 100
+  assign form_id = 'product-form-' | append: section_id
+%}
+
+<product-form-component
+  id="ProductForm-{{ section_id }}"
+  class="lab-buy-button"
+  data-product-id="{{ product.id }}"
+  data-quantity-default="1"
+  on:submit="/handleSubmit"
+>
+{%- form 'product',
+  product,
+  id: form_id,
+  class: 'lab-buy-button__form',
+  novalidate: 'novalidate'
+-%}
+    <input
+      ref="variantId"
+      type="hidden"
+      name="id"
+      value="{{ current_variant.id }}"
+    >
+
+    <add-to-cart-component
+      ref="addToCartButtonContainer"
+      data-product-variant-media="{{ product_variant_media }}"
+      data-add-to-cart-animation="{{ settings.add_to_cart_animation }}"
+    >
+      <button
+        type="submit"
+        name="add"
+        ref="addToCartButton"
+        on:click="/handleClick"
+        class="lab-buy-button__button"
+        {% unless can_add_to_cart %}
+          disabled
+        {% endunless %}
+      >
+        <span class="add-to-cart-text">
+          <span class="add-to-cart-text__content">
+            {% if can_add_to_cart %}
+              Add to cart
+            {% else %}
+              Sold out
+            {% endif %}
+          </span>
+        </span>
+      </button>
+    </add-to-cart-component>
+
+    <div ref="addToCartTextError" class="lab-buy-button__error hidden"></div>
+
+    <div ref="liveRegion" class="visually-hidden" aria-live="polite"></div>
+  {% endform %}
+</product-form-component>

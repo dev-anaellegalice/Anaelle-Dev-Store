@@ -16,3 +16,100 @@
   height: auto;
   object-fit: cover;
 }
+
+.lab-product-options {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 28px 0;
+}
+
+.lab-product-options__group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.lab-product-options__label {
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(0 0 0 / 65%);
+}
+
+.lab-product-options__values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lab-product-options__value--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.lab-product-options__value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 18px;
+  border: 1px solid rgb(0 0 0 / 14%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 45%);
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.lab-product-options__value:hover {
+  border-color: rgb(0 0 0 / 35%);
+  transform: translateY(-1px);
+}
+
+.lab-product-options__input:checked + .lab-product-options__value {
+  border-color: currentColor;
+  background: rgb(0 0 0 / 4%);
+}
+
+.lab-buy-button {
+  margin-top: 32px;
+}
+
+.lab-buy-button__form {
+  width: 100%;
+}
+
+.lab-buy-button__button {
+  border: 1px solid var(--color-primary-button-border);
+  width: 100%;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-button-border);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+}
+
+.lab-buy-button__button:hover {
+  opacity: .9;
+}
+
+.lab-buy-button__button:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
