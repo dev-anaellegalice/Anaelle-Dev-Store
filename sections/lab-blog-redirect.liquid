@@ -1,0 +1,110 @@
+{{ 'section-lab-blog-redirect.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --lab-blog-background: {{ section.settings.background_color }};
+    --lab-blog-text: {{ section.settings.text_color }};
+    --lab-blog-accent: {{ section.settings.accent_color }};
+  }
+{%- endstyle -%}
+
+{% if section.settings.blog_url != blank %}
+  <section class="lab-blog-redirect">
+    <div class="lab-blog-redirect__container page-width">
+      <div class="lab-blog-redirect__content">
+        {% if section.settings.eyebrow != blank %}
+          <p class="lab-blog-redirect__eyebrow">
+            {{ section.settings.eyebrow }}
+          </p>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h2 class="lab-blog-redirect__heading">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <div class="lab-blog-redirect__text rte">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+      </div>
+
+      <a
+        class="lab-blog-redirect__link"
+        href="{{ section.settings.blog_url }}"
+        aria-label="{{ section.settings.button_label | escape }}"
+      >
+        <span class="lab-blog-redirect__link-label">
+          {{ section.settings.button_label }}
+        </span>
+
+        <span class="lab-blog-redirect__link-icon" aria-hidden="true">
+          ↗
+        </span>
+      </a>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Lab blog redirect",
+  "tag": "section",
+  "class": "section-lab-blog-redirect",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "LAB NOTES"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "THOUGHTS, EXPERIMENTS & SHOPIFY INSIGHTS"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "blog_url",
+      "label": "Blog page"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Explore the journal"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f1f8f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#6aa88f"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lab blog redirect"
+    }
+  ]
+}
+{% endschema %}

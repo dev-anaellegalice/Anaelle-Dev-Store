@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "main": {
       "type": "product-information",
@@ -117,6 +118,7 @@
                 "border_opacity": 100,
                 "border_color": "",
                 "border_radius": 0,
+                "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 0,
@@ -313,6 +315,7 @@
       "block_order": [
         "disclosures_g9mWze"
       ],
+      "disabled": true,
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
@@ -325,151 +328,44 @@
         "padding-block-end": 0
       }
     },
-    "product_recommendations_qggXJq": {
-      "type": "product-recommendations",
-      "blocks": {
-        "text_cbcgyb": {
-          "type": "text",
-          "name": "t:names.header",
-          "settings": {
-            "text": "<h3>You may also like </h3>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h4",
-            "font": "var(--font-primary--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "text_color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
-          "settings": {
-            "product_card_gap": 8,
-            "background_color": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 8,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_DNizbJ": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_color": "",
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_M7MJkb": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_gLWgA6": {
-              "type": "price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "text_color": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_DNizbJ",
-            "product_title_M7MJkb",
-            "price_gLWgA6"
-          ]
-        }
-      },
-      "block_order": [
-        "text_cbcgyb"
-      ],
-      "name": "t:names.product_recommendations",
+    "main_product_lab_JtqzmV": {
+      "type": "main-product-lab",
+      "name": "Main product lab",
+      "settings": {}
+    },
+    "lab_product_formula_nVB76b": {
+      "type": "lab-product-formula",
+      "name": "Lab product formula",
       "settings": {
-        "product": "{{ closest.product }}",
-        "recommendation_type": "related",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 4,
-        "columns": 4,
-        "mobile_columns": "2",
-        "columns_gap": 12,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "gap": 28,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "eyebrow": "THE FORMULA REVEALED",
+        "heading": "SCROLL TO DISCOVER WHAT POWERS THIS PRODUCT",
+        "text": "",
+        "image": "shopify://shop_images/shopify-svgrepo-com.svg",
+        "background_color": "#f7fbfa",
+        "panel_color": "#ffffff",
+        "text_color": "#111111",
+        "accent_color": "#6cae98"
+      }
+    },
+    "lab_blog_redirect_GeXhqi": {
+      "type": "lab-blog-redirect",
+      "name": "Lab blog redirect",
+      "settings": {
+        "eyebrow": "LAB NOTES",
+        "heading": "THOUGHTS, EXPERIMENTS & SHOPIFY INSIGHTS",
+        "text": "",
+        "blog_url": "shopify://products/liquid-essentials™",
+        "button_label": "Explore the journal",
+        "background_color": "#f1f8f5",
+        "text_color": "#111111",
+        "accent_color": "#6aa88f"
       }
     }
   },
   "order": [
     "main",
-    "product_recommendations_qggXJq"
+    "main_product_lab_JtqzmV",
+    "lab_product_formula_nVB76b",
+    "lab_blog_redirect_GeXhqi"
   ]
 }

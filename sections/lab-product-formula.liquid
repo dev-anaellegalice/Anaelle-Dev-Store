@@ -1,0 +1,207 @@
+{{ 'section-lab-product-formula.css' | asset_url | stylesheet_tag }}
+<script
+  src="{{ 'section-lab-product-formula.js' | asset_url }}"
+  defer="defer"
+></script>
+
+{% liquid
+  assign formula_items = product.metafields.custom.formula_items.value
+  assign product_image = product.featured_media.preview_image
+
+  if section.settings.image != blank
+    assign product_image = section.settings.image
+  endif
+%}
+
+{% if formula_items != blank %}
+  <lab-product-formula
+    id="LabProductFormula-{{ section.id }}"
+    class="lab-product-formula"
+    style="
+      --lab-formula-background: {{ section.settings.background_color }};
+      --lab-formula-text: {{ section.settings.text_color }};
+      --lab-formula-accent: {{ section.settings.accent_color }};
+      --lab-formula-panel: {{ section.settings.panel_color }};
+    "
+  >
+    <div class="lab-product-formula__sticky">
+      <div class="lab-product-formula__background" aria-hidden="true">
+        <span class="lab-product-formula__orbit lab-product-formula__orbit--one"></span>
+        <span class="lab-product-formula__orbit lab-product-formula__orbit--two"></span>
+        <span class="lab-product-formula__orbit lab-product-formula__orbit--three"></span>
+        <span class="lab-product-formula__particle lab-product-formula__particle--one"></span>
+        <span class="lab-product-formula__particle lab-product-formula__particle--two"></span>
+      </div>
+
+      <div class="lab-product-formula__layout page-width">
+        <header class="lab-product-formula__intro">
+          {% if section.settings.eyebrow != blank %}
+            <p class="lab-product-formula__eyebrow">
+              {{ section.settings.eyebrow }}
+            </p>
+          {% endif %}
+
+          {% if section.settings.heading != blank %}
+            <h2 class="lab-product-formula__heading">
+              {{ section.settings.heading }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.text != blank %}
+            <div class="lab-product-formula__intro-text rte">
+              {{ section.settings.text }}
+            </div>
+          {% endif %}
+        </header>
+
+        <div class="lab-product-formula__visual">
+          {% if product_image != blank %}
+            <div class="lab-product-formula__image-wrapper">
+              {{
+                product_image
+                | image_url: width: 1000
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '320, 480, 640, 800, 1000',
+                  sizes: '(max-width: 749px) 70vw, 34vw',
+                  class: 'lab-product-formula__image',
+                  alt: product.title
+              }}
+            </div>
+          {% endif %}
+        </div>
+
+        <div
+          class="lab-product-formula__items"
+          role="list"
+          data-formula-items
+        >
+          {% for item in formula_items %}
+            <article
+              class="lab-product-formula__item"
+              role="listitem"
+              data-formula-item
+              data-index="{{ forloop.index0 }}"
+            >
+              <div class="lab-product-formula__item-header">
+                <span class="lab-product-formula__number">
+                  {{ forloop.index | prepend: '0' }}
+                </span>
+
+                {% if item.icon.value != blank %}
+                  <div class="lab-product-formula__icon">
+                    {{
+                      item.icon.value
+                      | image_url: width: 80
+                      | image_tag:
+                        loading: 'lazy',
+                        widths: '40, 60, 80',
+                        alt: item.title.value
+                    }}
+                  </div>
+                {% endif %}
+              </div>
+
+              {% if item.title.value != blank %}
+                <h3 class="lab-product-formula__item-title">
+                  {{ item.title.value }}
+                </h3>
+              {% endif %}
+
+              {% if item.description.value != blank %}
+                <div class="lab-product-formula__item-description">
+                  {{ item.description.value | metafield_tag }}
+                </div>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div
+        class="lab-product-formula__progress"
+        aria-hidden="true"
+      >
+        <span class="lab-product-formula__progress-track">
+          <span
+            class="lab-product-formula__progress-value"
+            data-formula-progress
+          ></span>
+        </span>
+      </div>
+    </div>
+
+    <div class="lab-product-formula__scroll-space">
+      {% for item in formula_items %}
+        <span
+          class="lab-product-formula__trigger"
+          data-formula-trigger
+          data-index="{{ forloop.index0 }}"
+          aria-hidden="true"
+        ></span>
+      {% endfor %}
+    </div>
+  </lab-product-formula>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Lab product formula",
+  "tag": "section",
+  "class": "section-lab-product-formula",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "THE FORMULA REVEALED"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "SCROLL TO DISCOVER WHAT POWERS THIS PRODUCT"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Custom product image",
+      "info": "Uses the featured product image when left empty."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f7fbfa"
+    },
+    {
+      "type": "color",
+      "id": "panel_color",
+      "label": "Panel color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#6cae98"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lab product formula"
+    }
+  ]
+}
+{% endschema %}

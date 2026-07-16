@@ -1,0 +1,123 @@
+.lab-blog-redirect {
+  color: var(--lab-blog-text);
+  background: var(--lab-blog-background);
+}
+
+.lab-blog-redirect__container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(40px, 8vw, 120px);
+  align-items: end;
+  padding-top: clamp(64px, 9vw, 120px);
+  padding-bottom: clamp(64px, 9vw, 120px);
+}
+
+.lab-blog-redirect__content {
+  max-width: 760px;
+}
+
+.lab-blog-redirect__eyebrow {
+  margin: 0 0 18px;
+  color: var(--lab-blog-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.lab-blog-redirect__heading {
+  margin: 0;
+  max-width: 760px;
+  font-size: clamp(38px, 6vw, 84px);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.lab-blog-redirect__text {
+  max-width: 520px;
+  margin-top: 24px;
+  font-size: 14px;
+  line-height: 1.65;
+  opacity: 0.65;
+}
+
+.lab-blog-redirect__text > * {
+  margin-top: 0;
+}
+
+.lab-blog-redirect__text > *:last-child {
+  margin-bottom: 0;
+}
+
+.lab-blog-redirect__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 220px;
+  padding: 18px 0;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  text-decoration: none;
+}
+
+.lab-blog-redirect__link::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  background: var(--lab-blog-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lab-blog-redirect__link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.lab-blog-redirect__link-label {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lab-blog-redirect__link-icon {
+  font-size: 22px;
+  line-height: 1;
+  transition: transform 300ms ease;
+}
+
+.lab-blog-redirect__link:hover .lab-blog-redirect__link-icon {
+  transform: translate(4px, -4px);
+}
+
+@media screen and (max-width: 749px) {
+  .lab-blog-redirect__container {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .lab-blog-redirect__heading {
+    font-size: clamp(38px, 13vw, 58px);
+  }
+
+  .lab-blog-redirect__link {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-blog-redirect__link::before,
+  .lab-blog-redirect__link-icon {
+    transition: none;
+  }
+}
